@@ -1,0 +1,1722 @@
+{
+ "id": "00000000-0000-0000-0000-000000000001",
+ "revision": 0,
+ "last_node_id": 4415029783591110,
+ "last_link_id": 0,
+ "nodes": [
+  {
+   "id": 133565215565877,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    50,
+    90
+   ],
+   "size": [
+    700,
+    460
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      188026173027641
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "How the reference pictures align with the target video \u2014 Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 8.71-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] Live-action, realistic UGC iPhone selfie video, vertical 9:16, one continuous handheld front-camera take with a subtle natural sway, small arm micro-jitters, autofocus gently re-focusing and natural exposure shifts. Real unretouched skin with visible pores, fine lines and natural shine, flyaway hairs and mild phone-camera noise. The shot begins in the position and framing established by Picture 1: a warm, relatable American woman in her fifties, with shoulder-length brown hair worn down and a soft blue cardigan, in her bright kitchen in soft morning light, standing at the counter. A plain white unlabeled pill jar stands on the counter in front of her, in the lower right of the frame. Her phone hand stretches toward the lens at the lower left edge of the frame; that phone is the camera. Her free hand rests on the counter beside the jar. [0.2s-4.6s] The woman on screen, with a warm, slightly husky female voice, a calm and honest conversational delivery and a General American accent, with tiny breaths between phrases (S1), gives a deadpan look straight into the lens, one eyebrow slowly rising, and says in a low, dry tone: <d>[English] Okay, real talk, most magnesium I tried did nothing for me.</d> She closes her lips. [4.9s-8.1s] She (S1) leans in a little toward the lens, her free hand resting on the counter, and says: <d>[English] So I stopped guessing and started reading labels.</d> She closes her lips. [8.1s-8.7s] She holds a dry, serious look into the lens with her lips together, her free hand resting on the counter beside the jar, settling into the pose, spacing and framing established by Picture 2. Her face stays dry and serious throughout. The woman stays the same person with natural hands for the whole shot, and everything important stays in the center of the frame.\n\noverall_soundscape: Close iPhone microphone audio with a slightly compressed, room-echoey voice, quiet kitchen room tone in the morning, a faint fridge hum, birds faint outside the window, a soft rustle of her cardigan.\n\nnon_diegetic_music: N/A"
+   ],
+   "title": "PROMPT \u00b7 take 1 in MiniMax's format (`take_graph.py --print-prompt`)",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 692609041764120,
+   "type": "VAELoader",
+   "pos": [
+    50,
+    2538.0
+   ],
+   "size": [
+    300,
+    86.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      65406596960320,
+      4028520981819981
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "minimax_h3_video_vae_fp16.safetensors"
+   ],
+   "title": "Video VAE"
+  },
+  {
+   "id": 1182855162897911,
+   "type": "VAELoader",
+   "pos": [
+    50,
+    2664.0
+   ],
+   "size": [
+    300,
+    86.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      195432152825879
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "minimax_h3_audio_vae_fp32.safetensors"
+   ],
+   "title": "Audio VAE"
+  },
+  {
+   "id": 1993808494694767,
+   "type": "UNETLoader",
+   "pos": [
+    50,
+    2790.0
+   ],
+   "size": [
+    300,
+    110.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      254856471003097
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "default"
+   ]
+  },
+  {
+   "id": 1355781762983166,
+   "type": "CLIPLoader",
+   "pos": [
+    50,
+    2940.0
+   ],
+   "size": [
+    300,
+    134.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "clip_name",
+     "type": "COMFY_MATCHTYPE_V3",
+     "link": 1642494387903858,
+     "grow_id": 1642494387903858,
+     "widget": {
+      "name": "clip_name"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CLIP",
+     "type": "CLIP",
+     "links": [
+      4333923356916505
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+    "minimax",
+    "default"
+   ]
+  },
+  {
+   "id": 1094190972570654,
+   "type": "RandomNoise",
+   "pos": [
+    50,
+    590
+   ],
+   "size": [
+    300,
+    110.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "NOISE",
+     "type": "NOISE",
+     "links": [
+      2660009970532149
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    1000,
+    "fixed"
+   ],
+   "title": "SEED \u00b7 change it to re-roll this take",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 3065144921249984,
+   "type": "KSamplerSelect",
+   "pos": [
+    50,
+    3852.0
+   ],
+   "size": [
+    300,
+    86.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "SAMPLER",
+     "type": "SAMPLER",
+     "links": [
+      705274473250077
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "res_multistep"
+   ]
+  },
+  {
+   "id": 1056866078736713,
+   "type": "ModelAttentionBackend",
+   "pos": [
+    850,
+    2538.0
+   ],
+   "size": [
+    300,
+    86.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 3057920579352687
+    }
+   ],
+   "outputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "links": [
+      3573126069986690,
+      1564692715783201,
+      2271537553524256
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "comfy kitchen attention"
+   ],
+   "title": "Speed: Kitchen attention"
+  },
+  {
+   "id": 2317669267314748,
+   "type": "LoraLoaderModelOnly",
+   "pos": [
+    450,
+    2538.0
+   ],
+   "size": [
+    300,
+    110.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 254856471003097
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      3057920579352687
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors",
+    1.0
+   ],
+   "title": "Turbo LoRA \u00b7 8 steps (speech takes only)"
+  },
+  {
+   "id": 2877534913929250,
+   "type": "BlockSparseAttention",
+   "pos": [
+    1250,
+    2538.0
+   ],
+   "size": [
+    300,
+    278.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 3573126069986690
+    }
+   ],
+   "outputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "links": [
+      1649246796198914,
+      364232482793169
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "sol-attn",
+    1.15,
+    0.2,
+    0.9,
+    "",
+    12288,
+    256,
+    "exact_kv_and_rows",
+    false
+   ],
+   "title": "Speed: sparse attention (draft only)"
+  },
+  {
+   "id": 50029816792698,
+   "type": "LoadImage",
+   "pos": [
+    50,
+    740.0
+   ],
+   "size": [
+    300,
+    130.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      2877580034022694
+     ]
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "a3df585ffbdb0b3def91f5963a5787d5f2b2a7cab39ee557fc8484fede9e3e40.png"
+   ],
+   "title": "FIRST FRAME \u00b7 keyframe still (576x1024)",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 2132261298617845,
+   "type": "LoadImage",
+   "pos": [
+    50,
+    910.0
+   ],
+   "size": [
+    300,
+    130.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      3147961150702025
+     ]
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "a3df585ffbdb0b3def91f5963a5787d5f2b2a7cab39ee557fc8484fede9e3e40.png"
+   ],
+   "title": "LAST FRAME \u00b7 keyframe still (often the same still)",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 1488104366505041,
+   "type": "MiniMaxH3ImageToVideo",
+   "pos": [
+    50,
+    3354.0
+   ],
+   "size": [
+    300,
+    218.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 4333923356916505
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": 65406596960320
+    },
+    {
+     "name": "first_frame",
+     "type": "IMAGE",
+     "link": 2877580034022694
+    },
+    {
+     "name": "last_frame",
+     "type": "IMAGE",
+     "link": 3147961150702025
+    },
+    {
+     "name": "prompt",
+     "type": "STRING",
+     "link": 188026173027641,
+     "grow_id": 188026173027641,
+     "widget": {
+      "name": "prompt"
+     }
+    },
+    {
+     "name": "width",
+     "type": "COMFY_MATCHTYPE_V3",
+     "link": 43493185748913,
+     "grow_id": 43493185748913,
+     "widget": {
+      "name": "width"
+     }
+    },
+    {
+     "name": "height",
+     "type": "COMFY_MATCHTYPE_V3",
+     "link": 2807308048576505,
+     "grow_id": 2807308048576505,
+     "widget": {
+      "name": "height"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "links": [
+      1710695546368668
+     ]
+    },
+    {
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      2211149245323237
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    null,
+    1344,
+    768,
+    209
+   ],
+   "title": "H3 first/last-frame-to-video \u00b7 209 frames = 8.71 s"
+  },
+  {
+   "id": 1741100052821346,
+   "type": "BasicScheduler",
+   "pos": [
+    50,
+    3978.0
+   ],
+   "size": [
+    300,
+    134.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 3190487578994833
+    }
+   ],
+   "outputs": [
+    {
+     "name": "SIGMAS",
+     "type": "SIGMAS",
+     "links": [
+      3649862784770592
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "simple",
+    8,
+    1.0
+   ]
+  },
+  {
+   "id": 1041926883384801,
+   "type": "BasicGuider",
+   "pos": [
+    50,
+    4152.0
+   ],
+   "size": [
+    300,
+    82.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 2537580913209115
+    },
+    {
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 1710695546368668
+    }
+   ],
+   "outputs": [
+    {
+     "name": "GUIDER",
+     "type": "GUIDER",
+     "links": [
+      2130617246792964
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": []
+  },
+  {
+   "id": 4036431934040691,
+   "type": "SamplerCustomAdvanced",
+   "pos": [
+    450,
+    3852.0
+   ],
+   "size": [
+    300,
+    142.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "noise",
+     "type": "NOISE",
+     "link": 2660009970532149
+    },
+    {
+     "name": "guider",
+     "type": "GUIDER",
+     "link": 2130617246792964
+    },
+    {
+     "name": "sampler",
+     "type": "SAMPLER",
+     "link": 705274473250077
+    },
+    {
+     "name": "sigmas",
+     "type": "SIGMAS",
+     "link": 3649862784770592
+    },
+    {
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 2211149245323237
+    }
+   ],
+   "outputs": [
+    {
+     "name": "output",
+     "type": "LATENT",
+     "links": [
+      3368276609485484,
+      1141105209106233
+     ]
+    },
+    {
+     "name": "denoised_output",
+     "type": "LATENT",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": []
+  },
+  {
+   "id": 452570923487620,
+   "type": "VAEDecodeAudio",
+   "pos": [
+    50,
+    4514.0
+   ],
+   "size": [
+    300,
+    82.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "samples",
+     "type": "LATENT",
+     "link": 3368276609485484
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": 195432152825879
+    }
+   ],
+   "outputs": [
+    {
+     "name": "AUDIO",
+     "type": "AUDIO",
+     "links": [
+      4186600734621550
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": []
+  },
+  {
+   "id": 412957497241979,
+   "type": "VAEDecode",
+   "pos": [
+    50,
+    4636.0
+   ],
+   "size": [
+    300,
+    82.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "samples",
+     "type": "LATENT",
+     "link": 1141105209106233
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": 4028520981819981
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      2468541783855734
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": []
+  },
+  {
+   "id": 2455586267215323,
+   "type": "CreateVideo",
+   "pos": [
+    450,
+    4514.0
+   ],
+   "size": [
+    300,
+    178.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 2468541783855734
+    },
+    {
+     "name": "audio",
+     "type": "AUDIO",
+     "link": 4186600734621550
+    }
+   ],
+   "outputs": [
+    {
+     "name": "VIDEO",
+     "type": "VIDEO",
+     "links": [
+      518361476674782
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    24.0,
+    "auto",
+    "sRGB",
+    "none"
+   ]
+  },
+  {
+   "id": 2734827228115079,
+   "type": "SaveVideo",
+   "pos": [
+    850,
+    4514.0
+   ],
+   "size": [
+    300,
+    158.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "video",
+     "type": "VIDEO",
+     "link": 518361476674782
+    }
+   ],
+   "outputs": [
+    {
+     "name": "video",
+     "type": "VIDEO",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "video/Comfy UGC - 2 Speech take",
+    "mp4",
+    "h264",
+    "auto",
+    ""
+   ],
+   "title": "SAVE \u00b7 take video (never reuse a prefix)"
+  },
+  {
+   "id": 3825886044847813,
+   "type": "PrimitiveBoolean",
+   "pos": [
+    50,
+    1320.0
+   ],
+   "size": [
+    300,
+    86.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "links": [
+      306805562343969,
+      2855972552935986,
+      291880881165633,
+      4487812982244250,
+      1279316126410203
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    true
+   ],
+   "title": "HQ?  on (default) = HQ 768x1376, 8 steps, dense attention  |  off = DRAFT 576x1024, 8 steps, sparse attention",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 3251715594966882,
+   "type": "PrimitiveString",
+   "pos": [
+    50,
+    1446.0
+   ],
+   "size": [
+    300,
+    86.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      3812395603579474
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "qwen3vl_32b_minimax_h3_int8_convrot.safetensors"
+   ],
+   "title": "text encoder file \u00b7 HQ value"
+  },
+  {
+   "id": 1279226716470959,
+   "type": "PrimitiveString",
+   "pos": [
+    50,
+    1572.0
+   ],
+   "size": [
+    300,
+    86.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      1215283472161745
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+   ],
+   "title": "text encoder file \u00b7 draft value"
+  },
+  {
+   "id": 4415029783591109,
+   "type": "ComfySwitchNode",
+   "pos": [
+    450,
+    1320.0
+   ],
+   "size": [
+    300,
+    106.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "on_false",
+     "type": "COMFY_MATCHTYPE_V3",
+     "link": 1215283472161745
+    },
+    {
+     "name": "on_true",
+     "type": "COMFY_MATCHTYPE_V3",
+     "link": 3812395603579474
+    },
+    {
+     "name": "switch",
+     "type": "BOOLEAN",
+     "link": 306805562343969,
+     "grow_id": 306805562343969,
+     "widget": {
+      "name": "switch"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "output",
+     "type": "COMFY_MATCHTYPE_V3",
+     "links": [
+      1642494387903858
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    null
+   ],
+   "title": "switch: text encoder file"
+  },
+  {
+   "id": 2719779995081759,
+   "type": "PrimitiveInt",
+   "pos": [
+    50,
+    1698.0
+   ],
+   "size": [
+    300,
+    110.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      287486308374766
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    768,
+    "fixed"
+   ],
+   "title": "width \u00b7 HQ value"
+  },
+  {
+   "id": 3112989003540242,
+   "type": "PrimitiveInt",
+   "pos": [
+    50,
+    1848.0
+   ],
+   "size": [
+    300,
+    110.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      2466275552679808
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    576,
+    "fixed"
+   ],
+   "title": "width \u00b7 draft value"
+  },
+  {
+   "id": 96717422434932,
+   "type": "ComfySwitchNode",
+   "pos": [
+    450,
+    1466.0
+   ],
+   "size": [
+    300,
+    106.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "on_false",
+     "type": "COMFY_MATCHTYPE_V3",
+     "link": 2466275552679808
+    },
+    {
+     "name": "on_true",
+     "type": "COMFY_MATCHTYPE_V3",
+     "link": 287486308374766
+    },
+    {
+     "name": "switch",
+     "type": "BOOLEAN",
+     "link": 2855972552935986,
+     "grow_id": 2855972552935986,
+     "widget": {
+      "name": "switch"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "output",
+     "type": "COMFY_MATCHTYPE_V3",
+     "links": [
+      43493185748913
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    null
+   ],
+   "title": "switch: width"
+  },
+  {
+   "id": 1413560116290024,
+   "type": "PrimitiveInt",
+   "pos": [
+    50,
+    1998.0
+   ],
+   "size": [
+    300,
+    110.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      2173772033977842
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    1376,
+    "fixed"
+   ],
+   "title": "height \u00b7 HQ value"
+  },
+  {
+   "id": 1659368911753061,
+   "type": "PrimitiveInt",
+   "pos": [
+    50,
+    2148.0
+   ],
+   "size": [
+    300,
+    110.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "INT",
+     "type": "INT",
+     "links": [
+      3638291447132600
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    1024,
+    "fixed"
+   ],
+   "title": "height \u00b7 draft value"
+  },
+  {
+   "id": 294163508710638,
+   "type": "ComfySwitchNode",
+   "pos": [
+    450,
+    1612.0
+   ],
+   "size": [
+    300,
+    106.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "on_false",
+     "type": "COMFY_MATCHTYPE_V3",
+     "link": 3638291447132600
+    },
+    {
+     "name": "on_true",
+     "type": "COMFY_MATCHTYPE_V3",
+     "link": 2173772033977842
+    },
+    {
+     "name": "switch",
+     "type": "BOOLEAN",
+     "link": 291880881165633,
+     "grow_id": 291880881165633,
+     "widget": {
+      "name": "switch"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "output",
+     "type": "COMFY_MATCHTYPE_V3",
+     "links": [
+      2807308048576505
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    null
+   ],
+   "title": "switch: height"
+  },
+  {
+   "id": 3406215226229490,
+   "type": "ComfySwitchNode",
+   "pos": [
+    450,
+    1758.0
+   ],
+   "size": [
+    300,
+    106.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "on_false",
+     "type": "COMFY_MATCHTYPE_V3",
+     "link": 1649246796198914
+    },
+    {
+     "name": "on_true",
+     "type": "COMFY_MATCHTYPE_V3",
+     "link": 1564692715783201
+    },
+    {
+     "name": "switch",
+     "type": "BOOLEAN",
+     "link": 4487812982244250,
+     "grow_id": 4487812982244250,
+     "widget": {
+      "name": "switch"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "output",
+     "type": "COMFY_MATCHTYPE_V3",
+     "links": [
+      3190487578994833
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    null
+   ],
+   "title": "switch: model for the scheduler (HQ dense / draft sparse)"
+  },
+  {
+   "id": 2031033275865566,
+   "type": "ComfySwitchNode",
+   "pos": [
+    450,
+    1904.0
+   ],
+   "size": [
+    300,
+    106.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "on_false",
+     "type": "COMFY_MATCHTYPE_V3",
+     "link": 364232482793169
+    },
+    {
+     "name": "on_true",
+     "type": "COMFY_MATCHTYPE_V3",
+     "link": 2271537553524256
+    },
+    {
+     "name": "switch",
+     "type": "BOOLEAN",
+     "link": 1279316126410203,
+     "grow_id": 1279316126410203,
+     "widget": {
+      "name": "switch"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "output",
+     "type": "COMFY_MATCHTYPE_V3",
+     "links": [
+      2537580913209115
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    null
+   ],
+   "title": "switch: model for the guider (HQ dense / draft sparse)"
+  },
+  {
+   "id": 4415029783591110,
+   "type": "MarkdownNote",
+   "pos": [
+    1750,
+    0
+   ],
+   "size": [
+    820,
+    900
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.35.0",
+    "Node name for S&R": "MarkdownNote"
+   },
+   "widgets_values": [
+    "## Comfy UGC - 2 Speech take\n\n**Speech take (a speaker's first take)** (8.7 s): the creator speaks the take's lines with H3's own voice, starting and ending on the keyframe stills. Model: fl2va (first/last-frame model: the text encoder also sees both stills). Speed: 8-step turbo LoRA.\n\n**Take 1 of the spec**\n1. \"Okay, real talk, most magnesium I tried did nothing for me.\"\n2. \"So I stopped guessing and started reading labels.\"\n\n**How to use**\n1. Make the stills first (**1 Keyframe stills**) and set them on **FIRST FRAME** and **LAST FRAME** (the preloaded ones are samples). Every object the take moves must be visible and within reach in the first frame.\n2. Group 1: **HQ?** on (default) = HQ 768x1376, the approved look (a 15 s speech take is about $0.44); off = draft 576x1024 for quick tests.\n3. Group 0: the **PROMPT** comes from `take_graph.py --print-prompt` (MiniMax's own caption format). Edit it in the same style: describe only what is seen and heard, no negations ('nothing floats' makes things float), spoken words only inside `<d>[English] ...</d>` after `(S1)`. Change **SEED** to re-roll.\n4. Run, then check it with **5 Review (Gemini QA)** and by eye and ear.\n\n**Preloaded**: take 1 prompt, seed, sample stills, size (576x1024 draft / 768x1376 HQ), length 209 frames (17k+5 grid at 24 fps).\n\n**Turbo LoRA**: `minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors` (Comfy Cloud catalog)\n\n**Not in this workflow (runs locally in the skill)**\nSpend guard, the lint (`take_graph.py --lint`), upload of stills and downloading the file: `take_graph.py --submit` does them. In the UI you press Run yourself (it costs credits).\n\n**License**: the H3 community license excludes US/EU/UK/KR use, outputs included. Tests only until the client has a license from MiniMax.\n\nSource: `scripts/ui_build.py` in the repo. Edit here in the UI, then run `scripts/ui_sync.py pull \"<name>\"` and the agent updates the skill to match."
+   ],
+   "title": "Read me"
+  }
+ ],
+ "links": [
+  [
+   1642494387903858,
+   4415029783591109,
+   0,
+   1355781762983166,
+   0,
+   "COMFY_MATCHTYPE_V3"
+  ],
+  [
+   3057920579352687,
+   2317669267314748,
+   0,
+   1056866078736713,
+   0,
+   "MODEL"
+  ],
+  [
+   254856471003097,
+   1993808494694767,
+   0,
+   2317669267314748,
+   0,
+   "MODEL"
+  ],
+  [
+   3573126069986690,
+   1056866078736713,
+   0,
+   2877534913929250,
+   0,
+   "MODEL"
+  ],
+  [
+   4333923356916505,
+   1355781762983166,
+   0,
+   1488104366505041,
+   0,
+   "CLIP"
+  ],
+  [
+   65406596960320,
+   692609041764120,
+   0,
+   1488104366505041,
+   1,
+   "VAE"
+  ],
+  [
+   188026173027641,
+   133565215565877,
+   0,
+   1488104366505041,
+   4,
+   "STRING"
+  ],
+  [
+   43493185748913,
+   96717422434932,
+   0,
+   1488104366505041,
+   5,
+   "COMFY_MATCHTYPE_V3"
+  ],
+  [
+   2807308048576505,
+   294163508710638,
+   0,
+   1488104366505041,
+   6,
+   "COMFY_MATCHTYPE_V3"
+  ],
+  [
+   2877580034022694,
+   50029816792698,
+   0,
+   1488104366505041,
+   2,
+   "IMAGE"
+  ],
+  [
+   3147961150702025,
+   2132261298617845,
+   0,
+   1488104366505041,
+   3,
+   "IMAGE"
+  ],
+  [
+   3190487578994833,
+   3406215226229490,
+   0,
+   1741100052821346,
+   0,
+   "COMFY_MATCHTYPE_V3"
+  ],
+  [
+   2537580913209115,
+   2031033275865566,
+   0,
+   1041926883384801,
+   0,
+   "COMFY_MATCHTYPE_V3"
+  ],
+  [
+   1710695546368668,
+   1488104366505041,
+   0,
+   1041926883384801,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   2660009970532149,
+   1094190972570654,
+   0,
+   4036431934040691,
+   0,
+   "NOISE"
+  ],
+  [
+   2130617246792964,
+   1041926883384801,
+   0,
+   4036431934040691,
+   1,
+   "GUIDER"
+  ],
+  [
+   705274473250077,
+   3065144921249984,
+   0,
+   4036431934040691,
+   2,
+   "SAMPLER"
+  ],
+  [
+   3649862784770592,
+   1741100052821346,
+   0,
+   4036431934040691,
+   3,
+   "SIGMAS"
+  ],
+  [
+   2211149245323237,
+   1488104366505041,
+   1,
+   4036431934040691,
+   4,
+   "LATENT"
+  ],
+  [
+   3368276609485484,
+   4036431934040691,
+   0,
+   452570923487620,
+   0,
+   "LATENT"
+  ],
+  [
+   195432152825879,
+   1182855162897911,
+   0,
+   452570923487620,
+   1,
+   "VAE"
+  ],
+  [
+   1141105209106233,
+   4036431934040691,
+   0,
+   412957497241979,
+   0,
+   "LATENT"
+  ],
+  [
+   4028520981819981,
+   692609041764120,
+   0,
+   412957497241979,
+   1,
+   "VAE"
+  ],
+  [
+   2468541783855734,
+   412957497241979,
+   0,
+   2455586267215323,
+   0,
+   "IMAGE"
+  ],
+  [
+   4186600734621550,
+   452570923487620,
+   0,
+   2455586267215323,
+   1,
+   "AUDIO"
+  ],
+  [
+   518361476674782,
+   2455586267215323,
+   0,
+   2734827228115079,
+   0,
+   "VIDEO"
+  ],
+  [
+   306805562343969,
+   3825886044847813,
+   0,
+   4415029783591109,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   3812395603579474,
+   3251715594966882,
+   0,
+   4415029783591109,
+   1,
+   "STRING"
+  ],
+  [
+   1215283472161745,
+   1279226716470959,
+   0,
+   4415029783591109,
+   0,
+   "STRING"
+  ],
+  [
+   2855972552935986,
+   3825886044847813,
+   0,
+   96717422434932,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   287486308374766,
+   2719779995081759,
+   0,
+   96717422434932,
+   1,
+   "INT"
+  ],
+  [
+   2466275552679808,
+   3112989003540242,
+   0,
+   96717422434932,
+   0,
+   "INT"
+  ],
+  [
+   291880881165633,
+   3825886044847813,
+   0,
+   294163508710638,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   2173772033977842,
+   1413560116290024,
+   0,
+   294163508710638,
+   1,
+   "INT"
+  ],
+  [
+   3638291447132600,
+   1659368911753061,
+   0,
+   294163508710638,
+   0,
+   "INT"
+  ],
+  [
+   4487812982244250,
+   3825886044847813,
+   0,
+   3406215226229490,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   1564692715783201,
+   1056866078736713,
+   0,
+   3406215226229490,
+   1,
+   "MODEL"
+  ],
+  [
+   1649246796198914,
+   2877534913929250,
+   0,
+   3406215226229490,
+   0,
+   "MODEL"
+  ],
+  [
+   1279316126410203,
+   3825886044847813,
+   0,
+   2031033275865566,
+   2,
+   "BOOLEAN"
+  ],
+  [
+   2271537553524256,
+   1056866078736713,
+   0,
+   2031033275865566,
+   1,
+   "MODEL"
+  ],
+  [
+   364232482793169,
+   2877534913929250,
+   0,
+   2031033275865566,
+   0,
+   "MODEL"
+  ]
+ ],
+ "groups": [
+  {
+   "title": "0 \u00b7 Inputs you edit",
+   "bounding": [
+    0,
+    0,
+    800,
+    1130.0
+   ],
+   "color": "#3f789e",
+   "font_size": 40,
+   "flags": {}
+  },
+  {
+   "title": "1 \u00b7 Draft / HQ switch",
+   "bounding": [
+    0,
+    1230.0,
+    800,
+    1118.0
+   ],
+   "color": "#8A8",
+   "font_size": 40,
+   "flags": {}
+  },
+  {
+   "title": "2 \u00b7 Models (don't touch)",
+   "bounding": [
+    0,
+    2448.0,
+    1600,
+    716.0
+   ],
+   "color": "#A88",
+   "font_size": 40,
+   "flags": {}
+  },
+  {
+   "title": "3 \u00b7 Keyframes + H3 conditioning",
+   "bounding": [
+    0,
+    3264.0,
+    500,
+    398.0
+   ],
+   "color": "#88A",
+   "font_size": 40,
+   "flags": {}
+  },
+  {
+   "title": "4 \u00b7 Sampling",
+   "bounding": [
+    0,
+    3762.0,
+    800,
+    562.0
+   ],
+   "color": "#A8A",
+   "font_size": 40,
+   "flags": {}
+  },
+  {
+   "title": "5 \u00b7 Decode + save (video with H3's own sound)",
+   "bounding": [
+    0,
+    4424.0,
+    1200,
+    384.0
+   ],
+   "color": "#8AA",
+   "font_size": 40,
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.25,
+   "offset": [
+    40,
+    40
+   ]
+  },
+  "info": {
+   "name": "Comfy UGC - 2 Speech take",
+   "description": "Speech take (a speaker's first take): H3 fl path of the skill's graph (take_graph.py), draft/HQ switch"
+  }
+ },
+ "version": 0.4
+}

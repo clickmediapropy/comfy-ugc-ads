@@ -1,0 +1,55 @@
+{
+  "name": "acme",
+  "product_name": "Acme Magnesium supplement bottle",
+  "product_aliases": ["bottle", "<Picture 1>"],
+  "packshot": "brief/packshot.png",
+  "seed": 1000,
+  "pronoun": "she",
+  "creator": "a warm, relatable American woman in her fifties, with shoulder-length brown hair worn down and a soft blue cardigan",
+  "voice": "a warm, slightly husky female voice, a calm and honest conversational delivery and a General American accent",
+  "setting": "her bright kitchen in soft morning light, standing at the counter",
+  "details": ["fridge magnets and a school photo on the fridge behind her", "a dish rack with two mugs by the sink", "a phone charger cable on the counter"],
+  "light": "soft daylight from a window on the left, mixed with the warm ceiling light",
+  "props": [
+    {"name": "jar", "desc": "a plain white unlabeled pill jar", "where": "stands on the counter in front of her, in the lower right of the frame"}
+  ],
+  "hands": "Her phone hand stretches toward the lens at the lower left edge of the frame; that phone is the camera. Her free hand rests on the counter beside the jar.",
+  "takes": [
+    {"part": "hook1", "kind": "speech", "tone": "negative",
+     "beats": [
+       {"say": "Okay, real talk, most magnesium I tried did nothing for me.", "action": "gives a deadpan look straight into the lens, one eyebrow slowly rising", "delivery": "in a low, dry tone"},
+       {"say": "So I stopped guessing and started reading labels.", "action": "leans in a little toward the lens, her free hand resting on the counter"}],
+     "soundscape": "Quiet kitchen room tone in the morning, a faint fridge hum, birds faint outside the window, a soft rustle of her cardigan.",
+     "face": "dry and serious",
+     "end_state": "she holds a dry, serious look into the lens with her lips together, her free hand resting on the counter beside the jar"},
+    {"part": "hook1", "kind": "action", "tone": "negative",
+     "beats": [
+       {"silent": 3.0,
+        "steps": [
+          "her free hand closes around the jar and lifts it a few inches off the counter",
+          "she gives the jar one short, hard shake",
+          "she sets the jar back down on the counter in the same spot",
+          "she opens her fingers and lays her hand flat on the counter beside the jar"]}],
+     "soundscape": "Quiet kitchen room tone in the morning.",
+     "end_state": "she looks into the lens with a dry, serious face, her lips together, her free hand resting on the counter beside the jar"},
+    {"part": "body", "kind": "speech", "shows_product": true,
+     "props": [
+       {"name": "jar", "desc": "a plain white unlabeled pill jar", "where": "stands upright on the counter in the lower right of the frame"}],
+     "hands": "Her phone hand stretches toward the lens at the lower left edge of the frame; that phone is the camera. Her free hand holds the bottle (<Picture 1>) up beside her face, label facing the lens.",
+     "beats": [
+       {"say": "This is the one I actually kept taking.", "action": "holds the bottle (<Picture 1>) steady beside her face, label to the lens"},
+       {"say": "Here is what is on the label.", "action": "holds the bottle still beside her face with a small honest smile"}]},
+    {"part": "hook2", "kind": "speech", "tone": "negative",
+     "setting": "the driver's seat of her parked car on a gray afternoon",
+     "camera": "propped", "camera_where": "the dashboard in front of her",
+     "details": ["a supermarket parking lot through the windshield", "a paper coffee cup in the cup holder"],
+     "light": "flat overcast daylight through the windshield",
+     "props": [],
+     "hands": "Both her hands rest on the bottom of the steering wheel.",
+     "beats": [
+       {"say": "Um, so I sat in the parking lot for ten minutes...", "action": "looks into the lens with a tired face, both hands on the steering wheel"},
+       {"say": "just reading magnesium labels on my phone.", "action": "lifts her right hand off the wheel and rubs her forehead slowly"}],
+     "soundscape": "Muffled car interior, faint traffic and a car door closing far away in the parking lot.",
+     "end_state": "she looks into the lens with a tired, serious face, her lips together, both hands back on the steering wheel"}
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "comfy-ugc-ads",
+  "displayName": "Comfy UGC Ads",
+  "version": "0.1.0",
+  "description": "Make realistic UGC-style video ads (3 hooks x 1 body x 3 closes, 9:16 and 4:5) from your brand brief and product packshot on Comfy Cloud: HeyGen Video 1 by default (MiniMax H3 as the voice-reference fallback), with script, keyframe stills, takes with native voice, lint against known defects, review and assembly.",
+  "author": {
+    "name": "Nico Delgado",
+    "url": "https://nicodelgado.dev"
+  },
+  "license": "UNLICENSED",
+  "keywords": [
+    "ugc",
+    "video ads",
+    "comfy cloud",
+    "minimax h3",
+    "heygen"
+  ]
+}

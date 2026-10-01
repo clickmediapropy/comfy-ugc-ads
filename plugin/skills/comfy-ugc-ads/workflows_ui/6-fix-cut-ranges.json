@@ -1,0 +1,428 @@
+{
+ "id": "00000000-0000-0000-0000-000000000001",
+ "revision": 0,
+ "last_node_id": 3275566703476441,
+ "last_link_id": 0,
+ "nodes": [
+  {
+   "id": 3275566703476440,
+   "type": "LoadVideo",
+   "pos": [
+    50,
+    90
+   ],
+   "size": [
+    300,
+    110.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "VIDEO",
+     "type": "VIDEO",
+     "links": [
+      4428584585753949,
+      2974592872703381
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "9dbcb79ce35590fa8164024e402aaf72b43b378d1593c3ec486d096e6f41166c.mp4"
+   ],
+   "title": "SET FILE: clip to fix",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 2117395494900824,
+   "type": "PrimitiveFloat",
+   "pos": [
+    50,
+    240.0
+   ],
+   "size": [
+    300,
+    86.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "FLOAT",
+     "type": "FLOAT",
+     "links": [
+      3535078747003505
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    4.1
+   ],
+   "title": "CUT FROM (seconds) = cut_in of the finding",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 700608418744439,
+   "type": "PrimitiveFloat",
+   "pos": [
+    50,
+    366.0
+   ],
+   "size": [
+    300,
+    86.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "FLOAT",
+     "type": "FLOAT",
+     "links": [
+      2631224709486310
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    5.0
+   ],
+   "title": "CUT TO (seconds) = cut_out of the finding",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 1349724620715347,
+   "type": "Video Slice",
+   "pos": [
+    50,
+    732.0
+   ],
+   "size": [
+    300,
+    134.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "video",
+     "type": "VIDEO",
+     "link": 4428584585753949
+    },
+    {
+     "name": "duration",
+     "type": "FLOAT",
+     "link": 3535078747003505,
+     "grow_id": 3535078747003505,
+     "widget": {
+      "name": "duration"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "VIDEO",
+     "type": "VIDEO",
+     "links": [
+      4474634598547016
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    0.0,
+    0.0,
+    false
+   ],
+   "title": "Keep: start -> CUT FROM"
+  },
+  {
+   "id": 1171842394425249,
+   "type": "Video Slice",
+   "pos": [
+    50,
+    906.0
+   ],
+   "size": [
+    300,
+    134.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "video",
+     "type": "VIDEO",
+     "link": 2974592872703381
+    },
+    {
+     "name": "start_time",
+     "type": "FLOAT",
+     "link": 2631224709486310,
+     "grow_id": 2631224709486310,
+     "widget": {
+      "name": "start_time"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "VIDEO",
+     "type": "VIDEO",
+     "links": [
+      507520862963798
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    0.0,
+    0.0,
+    false
+   ],
+   "title": "Keep: CUT TO -> end (duration 0 = to the end)"
+  },
+  {
+   "id": 2048824191445864,
+   "type": "ConcatenateVideo",
+   "pos": [
+    450,
+    732.0
+   ],
+   "size": [
+    300,
+    106.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "videos",
+     "type": "COMFY_AUTOGROW_V3",
+     "link": null
+    },
+    {
+     "name": "complete_audio",
+     "type": "AUDIO",
+     "link": null
+    },
+    {
+     "name": "videos.video0",
+     "type": "VIDEO",
+     "link": 4474634598547016,
+     "grow_id": 4474634598547016
+    },
+    {
+     "name": "videos.video1",
+     "type": "VIDEO",
+     "link": 507520862963798,
+     "grow_id": 507520862963798
+    }
+   ],
+   "outputs": [
+    {
+     "name": "VIDEO",
+     "type": "VIDEO",
+     "links": [
+      2004537373287435
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "h264"
+   ],
+   "title": "Join the two kept parts (audio and video stay in sync)"
+  },
+  {
+   "id": 1544837598291730,
+   "type": "SaveVideo",
+   "pos": [
+    50,
+    1320.0
+   ],
+   "size": [
+    300,
+    158.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "video",
+     "type": "VIDEO",
+     "link": 2004537373287435
+    }
+   ],
+   "outputs": [
+    {
+     "name": "video",
+     "type": "VIDEO",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "video/fixed_cut",
+    "mp4",
+    "h264",
+    "re-encode",
+    14.0,
+    ""
+   ],
+   "title": "SAVE \u00b7 fixed clip (never reuse a prefix)"
+  },
+  {
+   "id": 3275566703476441,
+   "type": "MarkdownNote",
+   "pos": [
+    950,
+    0
+   ],
+   "size": [
+    820,
+    900
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.35.0",
+    "Node name for S&R": "MarkdownNote"
+   },
+   "widgets_values": [
+    "## Fix - cut flagged ranges\n\nRemove ONE flagged time range from a clip with plain Comfy nodes, the same thing `media.py cut` does with ffmpeg: keep the part before the range and the part after it, join them, re-encode (CRF 14). **No AI repair**: nothing is regenerated, restyled or inpainted (decision `7cc533b`). It only fixes defects that are removable spoken words (the Review workflow marks them `removable` with `cut_in`/`cut_out`, taken from the silence around the defect).\n\n**How to use**\n1. Set the clip on **SET FILE** and the range: **CUT FROM** / **CUT TO** = `cut_in` / `cut_out` of the finding in the review (the preloaded numbers are an example).\n2. Run. Check the joint by ear and by eye, then run **Review (Gemini QA)** on the result.\n3. Keep the fixed clip only if its re-review score is strictly lower than the original's (max 2 attempts, `fix.py` policy). Otherwise ship the original and mark the defect NEEDS EDITOR with its timestamps.\n\n**More than one range**: run it again on the output (that is what `fix.py` does for its second attempt), shifting the second range by the seconds already removed.\n\n**Not in this workflow (runs locally in the skill)**\n- `fix.py` itself (attempt counter, score comparison, NEEDS EDITOR report, exit codes) and multi-range cuts in one pass run locally.\n- Re-render (paid) is never done here: use **Take N** with a new SEED.\n\nSource: `scripts/ui_build.py` in the repo. Edit here in the UI, then run `scripts/ui_sync.py pull \"<name>\"` and the agent updates the skill to match."
+   ],
+   "title": "Read me"
+  }
+ ],
+ "links": [
+  [
+   4428584585753949,
+   3275566703476440,
+   0,
+   1349724620715347,
+   0,
+   "VIDEO"
+  ],
+  [
+   3535078747003505,
+   2117395494900824,
+   0,
+   1349724620715347,
+   1,
+   "FLOAT"
+  ],
+  [
+   2974592872703381,
+   3275566703476440,
+   0,
+   1171842394425249,
+   0,
+   "VIDEO"
+  ],
+  [
+   2631224709486310,
+   700608418744439,
+   0,
+   1171842394425249,
+   1,
+   "FLOAT"
+  ],
+  [
+   4474634598547016,
+   1349724620715347,
+   0,
+   2048824191445864,
+   2,
+   "VIDEO"
+  ],
+  [
+   507520862963798,
+   1171842394425249,
+   0,
+   2048824191445864,
+   3,
+   "VIDEO"
+  ],
+  [
+   2004537373287435,
+   2048824191445864,
+   0,
+   1544837598291730,
+   0,
+   "VIDEO"
+  ]
+ ],
+ "groups": [
+  {
+   "title": "0 \u00b7 Inputs you edit",
+   "bounding": [
+    0,
+    0,
+    500,
+    542.0
+   ],
+   "color": "#3f789e",
+   "font_size": 40,
+   "flags": {}
+  },
+  {
+   "title": "1 \u00b7 Cut (keep everything outside the range)",
+   "bounding": [
+    0,
+    642.0,
+    800,
+    488.0
+   ],
+   "color": "#8A8",
+   "font_size": 40,
+   "flags": {}
+  },
+  {
+   "title": "2 \u00b7 Save",
+   "bounding": [
+    0,
+    1230.0,
+    500,
+    338.0
+   ],
+   "color": "#A88",
+   "font_size": 40,
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.25,
+   "offset": [
+    40,
+    40
+   ]
+  },
+  "info": {
+   "name": "Comfy UGC - 6 Fix - cut flagged ranges",
+   "description": "Cut a flagged time range out of a clip with Comfy nodes (no AI repair)"
+  }
+ },
+ "version": 0.4
+}

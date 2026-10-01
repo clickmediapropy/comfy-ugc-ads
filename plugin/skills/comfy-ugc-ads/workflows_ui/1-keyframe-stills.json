@@ -1,0 +1,483 @@
+{
+ "id": "00000000-0000-0000-0000-000000000001",
+ "revision": 0,
+ "last_node_id": 3361792108772759,
+ "last_link_id": 0,
+ "nodes": [
+  {
+   "id": 487988168880225,
+   "type": "OpenAIGPTImageNodeV2",
+   "pos": [
+    50,
+    90
+   ],
+   "size": [
+    640,
+    420
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      2643140968999813,
+      3385623102361013
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "A photorealistic iPhone front-camera selfie photo of a warm, relatable American woman in her fifties, with shoulder-length brown hair worn down and a soft blue cardigan, in her bright kitchen in soft morning light, standing at the counter, captured as a casual, unposed phone snapshot. She has a tired, serious expression with her lips together, looking straight into the lens. A plain white unlabeled pill jar stands on the counter in front of her, in the lower right of the frame. Her phone hand stretches toward the lens at the lower left edge of the frame; that phone is the camera. Her free hand rests on the counter beside the jar. Vertical 9:16 portrait, she holds the phone at arm's length at a slightly high selfie angle, head and shoulders in frame, slightly off-center, the surface in front of her visible in the foreground, slightly imperfect everyday composition. Small real details around: fridge magnets and a school photo on the fridge behind her, a dish rack with two mugs by the sink, a phone charger cable on the counter. Lighting: soft daylight from a window on the left, mixed with the warm ceiling light. Everything is in sharp focus with crisp natural realism, like a real unedited iPhone photo: realistic skin texture with pores and small imperfections, natural eye reflections, true-to-life proportions and materials. An authentic unfiltered UGC snapshot, not a polished ad: no glossy commercial look, no cinematic color grading, no studio lighting, no text, captions, logos or graphic overlays.",
+    "gpt-image-2.5-sunburst",
+    "1024x1536",
+    1024,
+    1024,
+    "auto",
+    "high",
+    1,
+    0,
+    "fixed"
+   ],
+   "title": "BASE STILL \u00b7 gpt-image-2.5-sunburst, 1024x1536, high (edit the prompt: creator, setting, every prop of the scene, hands)",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 1490482770342982,
+   "type": "ImageScale",
+   "pos": [
+    450,
+    90
+   ],
+   "size": [
+    300,
+    158.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2643140968999813
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      1971811148424448
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "lanczos",
+    576,
+    1024,
+    "center"
+   ],
+   "title": "Crop to 9:16 576x1024 (= media.py fitframe)"
+  },
+  {
+   "id": 3034589569351053,
+   "type": "SaveImage",
+   "pos": [
+    450,
+    288.0
+   ],
+   "size": [
+    300,
+    86.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 3385623102361013
+    }
+   ],
+   "outputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "stills/base_1024x1536"
+   ],
+   "title": "SAVE \u00b7 base still 1024x1536 (keep it: every edit starts from it)"
+  },
+  {
+   "id": 3361792108772758,
+   "type": "SaveImage",
+   "pos": [
+    850,
+    90
+   ],
+   "size": [
+    300,
+    86.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 1971811148424448
+    }
+   ],
+   "outputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "stills/base_576x1024"
+   ],
+   "title": "SAVE \u00b7 base still 576x1024 (the keyframe)"
+  },
+  {
+   "id": 1789191989405800,
+   "type": "LoadImage",
+   "pos": [
+    50,
+    790
+   ],
+   "size": [
+    300,
+    130.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      655041528682010
+     ]
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "a3df585ffbdb0b3def91f5963a5787d5f2b2a7cab39ee557fc8484fede9e3e40.png"
+   ],
+   "title": "SET FILE: the base still 1024x1536",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 2092519598024816,
+   "type": "LoadImage",
+   "pos": [
+    50,
+    960.0
+   ],
+   "size": [
+    300,
+    130.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      2919556862262978
+     ]
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "c0ed6e9abf06a63e0f586b4a684cb01855551e4d4fc2aed012af20f280397eb4.png"
+   ],
+   "title": "SET FILE: the packshot (second image)",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 2508671454364201,
+   "type": "OpenAIGPTImageNodeV2",
+   "pos": [
+    450,
+    790
+   ],
+   "size": [
+    640,
+    420
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.images.image_1",
+     "type": "IMAGE",
+     "link": 655041528682010,
+     "grow_id": 655041528682010
+    },
+    {
+     "name": "model.images.image_2",
+     "type": "IMAGE",
+     "link": 2919556862262978,
+     "grow_id": 2919556862262978
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      4326857306819696
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "Edit the first image. Keep the same person, face, hair, clothes, room, lighting, framing and camera angle exactly. The new photo shows: She has a relaxed, natural expression with her mouth closed, looking straight into the lens. A plain white unlabeled pill jar stands upright on the counter in the lower right of the frame. Her phone hand stretches toward the lens at the lower left edge of the frame; that phone is the camera. Her free hand holds the bottle up beside her face, label facing the lens. The product is the Acme Magnesium supplement bottle from the second image, reproduced exactly (shape, colors, label text), label facing the camera, fingers wrapped naturally around it. Keep the same unedited iPhone look, with no added text, captions or logos.",
+    "gpt-image-2.5-sunburst",
+    "1024x1536",
+    1024,
+    1024,
+    "auto",
+    "high",
+    1,
+    0,
+    "fixed"
+   ],
+   "title": "EDITED STILL \u00b7 say only what changes",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 2026696776307485,
+   "type": "ImageScale",
+   "pos": [
+    850,
+    790
+   ],
+   "size": [
+    300,
+    158.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 4326857306819696
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      2257349644055430
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "lanczos",
+    576,
+    1024,
+    "center"
+   ],
+   "title": "Crop to 576x1024"
+  },
+  {
+   "id": 1437331512959433,
+   "type": "SaveImage",
+   "pos": [
+    1250,
+    790
+   ],
+   "size": [
+    300,
+    86.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 2257349644055430
+    }
+   ],
+   "outputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "stills/edit_576x1024"
+   ],
+   "title": "SAVE \u00b7 edited still 576x1024"
+  },
+  {
+   "id": 3361792108772759,
+   "type": "MarkdownNote",
+   "pos": [
+    1750,
+    0
+   ],
+   "size": [
+    820,
+    900
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.35.0",
+    "Node name for S&R": "MarkdownNote"
+   },
+   "widgets_values": [
+    "## Keyframe stills\n\nMake the keyframe stills every take starts and ends on (SKILL.md step 4), with the same partner node the skill calls: **OpenAI GPT Image 2.5** set to `gpt-image-2.5-sunburst` (the top OpenAI image model for generation and editing, 2026-09-30), 1024x1536, quality high. One **base still** per scene; every other still of the same person is an **edit** of the base, so the face and the room stay the same. Both are cropped to 576x1024 (center), like `media.py fitframe`.\n\n**How to use**\n1. Group 1: the base prompt comes from `take_graph.py --print-still` (references/stills.md: iPhone capture, the creator, **every object the script will move, visible and within easy reach of the free hand**, framing, room details, practical light, the anti-gloss finish). Run it once and keep the 1024x1536 file.\n2. Group 2: load that base still on **SET FILE** and write only what changes (a pose, the bottle in hand, the end pose of a take). Run once per still.\n3. Check each 576x1024 still before rendering a take: `python3 scripts/review.py <still.png> --still --spec <spec.json> --take N [--same-as <base still>]` (props visible and reachable, hands as scripted, looks like a real phone photo, same person).\n4. Set the stills on FIRST FRAME / LAST FRAME of the take workflows. Takes that meet at a seam share the same still.\n\n**Cost**: one partner call per still (Comfy shows the price before running). Partner nodes cache identical calls: change the prompt or the seed to get a new image.\n\n**Not in this workflow (runs locally in the skill)**\n- The still check (`review.py --still`, Gemini) runs locally.\n- The skill calls the same node through `partner_generate` (edits pass the base still's job id instead of a file).\n\nSource: `scripts/ui_build.py` in the repo. Edit here in the UI, then run `scripts/ui_sync.py pull \"<name>\"` and the agent updates the skill to match."
+   ],
+   "title": "Read me"
+  }
+ ],
+ "links": [
+  [
+   2643140968999813,
+   487988168880225,
+   0,
+   1490482770342982,
+   0,
+   "IMAGE"
+  ],
+  [
+   3385623102361013,
+   487988168880225,
+   0,
+   3034589569351053,
+   0,
+   "IMAGE"
+  ],
+  [
+   1971811148424448,
+   1490482770342982,
+   0,
+   3361792108772758,
+   0,
+   "IMAGE"
+  ],
+  [
+   655041528682010,
+   1789191989405800,
+   0,
+   2508671454364201,
+   0,
+   "IMAGE"
+  ],
+  [
+   2919556862262978,
+   2092519598024816,
+   0,
+   2508671454364201,
+   1,
+   "IMAGE"
+  ],
+  [
+   4326857306819696,
+   2508671454364201,
+   0,
+   2026696776307485,
+   0,
+   "IMAGE"
+  ],
+  [
+   2257349644055430,
+   2026696776307485,
+   0,
+   1437331512959433,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [
+  {
+   "title": "1 \u00b7 Base still (one per scene)",
+   "bounding": [
+    0,
+    0,
+    1200,
+    600
+   ],
+   "color": "#3f789e",
+   "font_size": 40,
+   "flags": {}
+  },
+  {
+   "title": "2 \u00b7 Edited still (same person and room, new pose or prop)",
+   "bounding": [
+    0,
+    700,
+    1600,
+    600
+   ],
+   "color": "#8A8",
+   "font_size": 40,
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.25,
+   "offset": [
+    40,
+    40
+   ]
+  },
+  "info": {
+   "name": "Comfy UGC - 1 Keyframe stills",
+   "description": "Keyframe stills: gpt-image-2.5-sunburst base still + edits, cropped to 576x1024"
+  }
+ },
+ "version": 0.4
+}

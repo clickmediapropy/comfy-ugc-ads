@@ -1,0 +1,226 @@
+{
+ "id": "00000000-0000-0000-0000-000000000001",
+ "revision": 0,
+ "last_node_id": 2438593512553975,
+ "last_link_id": 0,
+ "nodes": [
+  {
+   "id": 491904513370327,
+   "type": "LoadImage",
+   "pos": [
+    50,
+    90
+   ],
+   "size": [
+    300,
+    130.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      430930460852378
+     ]
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "a3df585ffbdb0b3def91f5963a5787d5f2b2a7cab39ee557fc8484fede9e3e40.png"
+   ],
+   "title": "FIRST FRAME \u00b7 keyframe still (the take starts exactly from it)",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 2438593512553974,
+   "type": "HeyGenImageToVideoNode",
+   "pos": [
+    50,
+    500.0
+   ],
+   "size": [
+    300,
+    206.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.image",
+     "type": "IMAGE",
+     "widget": {
+      "name": "model.image"
+     },
+     "link": 430930460852378
+    }
+   ],
+   "outputs": [
+    {
+     "name": "VIDEO",
+     "type": "VIDEO",
+     "links": [
+      3100220423465249
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "heygen-video-1",
+    "Live-action, realistic UGC iPhone selfie video, vertical 9:16, one continuous handheld front-camera take with a subtle natural sway, small arm micro-jitters, autofocus gently re-focusing and natural exposure shifts. Real unretouched skin with visible pores, fine lines and natural shine, flyaway hairs and mild phone-camera noise. It starts exactly from the reference image: a warm, relatable American woman in her fifties, with shoulder-length brown hair worn down and a soft blue cardigan, in her bright kitchen in soft morning light, standing at the counter. A plain white unlabeled pill jar stands on the counter in front of her, in the lower right of the frame. Her phone hand stretches toward the lens at the lower left edge of the frame; that phone is the camera. Her free hand rests on the counter beside the jar. She is on screen and talks straight into the lens; her lips move in sync with every word, in a warm, slightly husky female voice, a calm and honest conversational delivery and a General American accent, with tiny breaths between phrases.\n\n0.2-4.6s: She gives a deadpan look straight into the lens, one eyebrow slowly rising, and says in a low, dry tone: \"Okay, real talk, most magnesium I tried did nothing for me.\"\n4.9-8.1s: She leans in a little toward the lens, her free hand resting on the counter, and says: \"So I stopped guessing and started reading labels.\"\n8.1-9s: She holds a dry, serious look into the lens with her lips together, her free hand resting on the counter beside the jar. Her face stays dry and serious throughout. The woman stays the same person with natural hands for the whole clip.\n\nClose iPhone microphone audio with a slightly compressed, room-echoey voice, quiet kitchen room tone in the morning, a faint fridge hum, birds faint outside the window, a soft rustle of her cardigan. No music, no subtitles, no text on screen.",
+    9,
+    "768p",
+    1000,
+    "fixed"
+   ],
+   "title": "HEYGEN \u00b7 prompt, duration (9 s), seed",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 1967305948339523,
+   "type": "SaveVideo",
+   "pos": [
+    50,
+    986.0
+   ],
+   "size": [
+    300,
+    158.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "video",
+     "type": "VIDEO",
+     "link": 3100220423465249
+    }
+   ],
+   "outputs": [
+    {
+     "name": "video",
+     "type": "VIDEO",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "video/Comfy UGC - 8 HeyGen take",
+    "mp4",
+    "h264",
+    "auto",
+    ""
+   ],
+   "title": "SAVE \u00b7 take video (never reuse a prefix)"
+  },
+  {
+   "id": 2438593512553975,
+   "type": "MarkdownNote",
+   "pos": [
+    650,
+    0
+   ],
+   "size": [
+    820,
+    900
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.35.0",
+    "Node name for S&R": "MarkdownNote"
+   },
+   "widgets_values": [
+    "## Comfy UGC - 8 HeyGen take\n\n**HeyGen Video 1 take** (9 s, 768p, about $0.32 per 15 s): the default model. It starts from the keyframe still and speaks the take's lines with its own voice. It has no last frame, no voice reference and no product reference: the product is in the still, and the voice is held by the same voice text and seed for every take of a creator. If the voice drifts across clips, re-render the later speech takes with **3 Speech take with voice reference** (H3).\n\n**How to use**\n1. Set the take's keyframe still on **FIRST FRAME** (from **1 Keyframe stills**).\n2. Check the prompt on the **HEYGEN** node: `heygen_take.py --spec <spec> --take N --print-prompt` writes it (natural language, timed beats, the audio in the last paragraph; no impact sounds).\n3. Run (paid). Review by eye and ear; then the next take.\n\n**Not in this workflow (runs locally in the skill)**\nThe spec lint, the prompt check, the spend guard and the download: `heygen_take.py --spec ... --user-ok --cap` does them. In the UI you press Run yourself (it costs credits).\n\n**License**: the H3 community license excludes US/EU/UK/KR use, outputs included. Tests only until the client has a license from MiniMax.\n\nSource: `scripts/ui_build.py` in the repo. Edit here in the UI, then run `scripts/ui_sync.py pull \"<name>\"` and the agent updates the skill to match."
+   ],
+   "title": "Read me"
+  }
+ ],
+ "links": [
+  [
+   430930460852378,
+   491904513370327,
+   0,
+   2438593512553974,
+   0,
+   "IMAGE"
+  ],
+  [
+   3100220423465249,
+   2438593512553974,
+   0,
+   1967305948339523,
+   0,
+   "VIDEO"
+  ]
+ ],
+ "groups": [
+  {
+   "title": "0 \u00b7 Inputs you edit",
+   "bounding": [
+    0,
+    0,
+    500,
+    310.0
+   ],
+   "color": "#3f789e",
+   "font_size": 40,
+   "flags": {}
+  },
+  {
+   "title": "1 \u00b7 HeyGen Video 1",
+   "bounding": [
+    0,
+    410.0,
+    500,
+    386.0
+   ],
+   "color": "#8A8",
+   "font_size": 40,
+   "flags": {}
+  },
+  {
+   "title": "2 \u00b7 Save",
+   "bounding": [
+    0,
+    896.0,
+    500,
+    338.0
+   ],
+   "color": "#A88",
+   "font_size": 40,
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.25,
+   "offset": [
+    40,
+    40
+   ]
+  },
+  "info": {
+   "name": "Comfy UGC - 8 HeyGen take",
+   "description": "HeyGen Video 1 take 1 (the default model)"
+  }
+ },
+ "version": 0.4
+}

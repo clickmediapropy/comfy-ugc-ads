@@ -1,0 +1,1411 @@
+{
+ "id": "00000000-0000-0000-0000-000000000001",
+ "revision": 0,
+ "last_node_id": 4439268165105395,
+ "last_link_id": 0,
+ "nodes": [
+  {
+   "id": 2420897834577174,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    50,
+    90
+   ],
+   "size": [
+    560,
+    260
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      4166384680976110
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "Okay, real talk, most magnesium I tried did nothing for me.\nSo I stopped guessing and started reading labels."
+   ],
+   "title": "EXPECTED \u00b7 the lines the speaker must say, one per line (from the take's prompt)",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 1198364940713538,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    50,
+    390
+   ],
+   "size": [
+    560,
+    260
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      707681658412604,
+      107470405249772
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "[0.2s-4.6s] says \"Okay, real talk, most magnesium I tried did nothing for me.\" while gives a deadpan look straight into the lens, one eyebrow slowly rising. [4.9s-8.1s] says \"So I stopped guessing and started reading labels.\" while leans in a little toward the lens, her free hand resting on the counter."
+   ],
+   "title": "INTENDED TAKE \u00b7 what should happen by time (the 'Timeline, second by second' block of the prompt)",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 3179685970258337,
+   "type": "VHS_LoadVideoFFmpeg",
+   "pos": [
+    50,
+    690
+   ],
+   "size": [
+    300,
+    290.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "meta_batch",
+     "type": "VHS_BatchManager",
+     "link": null
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      1598380996334804
+     ]
+    },
+    {
+     "name": "mask",
+     "type": "MASK",
+     "links": []
+    },
+    {
+     "name": "audio",
+     "type": "AUDIO",
+     "links": [
+      848710882650904
+     ]
+    },
+    {
+     "name": "video_info",
+     "type": "VHS_VIDEOINFO",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "9dbcb79ce35590fa8164024e402aaf72b43b378d1593c3ec486d096e6f41166c.mp4",
+    4,
+    320,
+    576,
+    0,
+    0,
+    "AnimateDiff"
+   ],
+   "title": "SET FILE: clip to review (4 fps frames + audio). Use the SAME clip on both loaders",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 2842767219488204,
+   "type": "VHS_LoadVideoFFmpeg",
+   "pos": [
+    50,
+    1020.0
+   ],
+   "size": [
+    300,
+    290.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "meta_batch",
+     "type": "VHS_BatchManager",
+     "link": null
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      4076311291965909
+     ]
+    },
+    {
+     "name": "mask",
+     "type": "MASK",
+     "links": []
+    },
+    {
+     "name": "audio",
+     "type": "AUDIO",
+     "links": []
+    },
+    {
+     "name": "video_info",
+     "type": "VHS_VIDEOINFO",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "9dbcb79ce35590fa8164024e402aaf72b43b378d1593c3ec486d096e6f41166c.mp4",
+    12,
+    360,
+    640,
+    0,
+    0,
+    "AnimateDiff"
+   ],
+   "title": "SET FILE: same clip (12 fps, 360 px wide, for the visual check)",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 2358847463922918,
+   "type": "StringFormat",
+   "pos": [
+    50,
+    1716.0
+   ],
+   "size": [
+    300,
+    86.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "values",
+     "type": "COMFY_AUTOGROW_V3",
+     "link": null
+    },
+    {
+     "name": "values.a",
+     "type": "*",
+     "link": 4166384680976110,
+     "grow_id": 4166384680976110
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      2053748674972229
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "EXPECTED:\n{a}"
+   ]
+  },
+  {
+   "id": 3829954757271424,
+   "type": "GeminiNodeV3",
+   "pos": [
+    450,
+    1716.0
+   ],
+   "size": [
+    300,
+    254.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "widget": {
+      "name": "model.prompt"
+     },
+     "link": 2053748674972229
+    },
+    {
+     "name": "model.audio.audio_1",
+     "type": "AUDIO",
+     "link": 848710882650904,
+     "grow_id": 848710882650904
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      3539874835754630
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "Gemini 3.8 Flash",
+    "",
+    "MEDIUM",
+    0.0,
+    0.95,
+    16384,
+    1,
+    "fixed",
+    "Check a spoken ad take against its script. Inputs: EXPECTED (the lines the speaker must say, one per line, in order) and the take's AUDIO. First transcribe the audio with word-level start/end seconds, then diff it with EXPECTED. Ignore case, punctuation, speech-recognition homophones and small spelling differences of names. Report EXTRA (unscripted words, filler, babble, or a VOCAL sound longer than 0.3 s such as laughter, mumbling, humming, singing, a sigh or a whisper), REPEAT (a scripted line or phrase said twice), WRONG (a scripted word replaced by a different word), MISSING (a scripted word not said) and ORDER. Non-vocal sounds (clattering, rustling, a thud, a click, a drawer, footsteps, room tone) are expected: ignore them. t0 = start of the first word involved, t1 = end of the last word involved; cut_in and cut_out = the middle of the silence just before and just after that span. sev is blocking for any WRONG content word, 2 or more EXTRA/MISSING words, any REPEAT, or a vocal sound longer than 0.5 s; otherwise minor. removable is true only if deleting the audio between cut_in and cut_out leaves EXPECTED exactly. Answer with JSON only: {\"transcript\":\"full text\",\"issues\":[{\"type\":\"EXTRA|REPEAT|WRONG|MISSING|ORDER\",\"sev\":\"blocking|minor\",\"t0\":0.0,\"t1\":0.0,\"cut_in\":0.0,\"cut_out\":0.0,\"removable\":false,\"evidence\":\"said vs expected\"}]}. If the take matches EXPECTED, issues is an empty list."
+   ],
+   "title": "Transcript check \u00b7 Gemini 3.8 Flash (transcribes, then diffs against EXPECTED)"
+  },
+  {
+   "id": 1675295184838449,
+   "type": "CreateVideo",
+   "pos": [
+    50,
+    2250.0
+   ],
+   "size": [
+    300,
+    178.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 4076311291965909
+    },
+    {
+     "name": "audio",
+     "type": "AUDIO",
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "name": "VIDEO",
+     "type": "VIDEO",
+     "links": [
+      569376399451689,
+      634459550587734
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    12.0,
+    "auto",
+    "sRGB",
+    "none"
+   ]
+  },
+  {
+   "id": 241407553132737,
+   "type": "StringFormat",
+   "pos": [
+    50,
+    2468.0
+   ],
+   "size": [
+    300,
+    86.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "values",
+     "type": "COMFY_AUTOGROW_V3",
+     "link": null
+    },
+    {
+     "name": "values.a",
+     "type": "*",
+     "link": 707681658412604,
+     "grow_id": 707681658412604
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      993211388764395
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "INTENDED TAKE, by time:\n{a}\n\nReview this video for the listed defects."
+   ]
+  },
+  {
+   "id": 1351573744280544,
+   "type": "GeminiNodeV3",
+   "pos": [
+    450,
+    2250.0
+   ],
+   "size": [
+    300,
+    254.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "widget": {
+      "name": "model.prompt"
+     },
+     "link": 993211388764395
+    },
+    {
+     "name": "model.video.video_1",
+     "type": "VIDEO",
+     "link": 569376399451689,
+     "grow_id": 569376399451689
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      3253902511167204
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "Gemini 3.8 Flash",
+    "",
+    "MEDIUM",
+    0.0,
+    0.95,
+    16384,
+    1,
+    "fixed",
+    "You are the QA reviewer of a vertical UGC ad take made by an AI video model: one continuous handheld selfie shot, no cuts. The video is shown at reduced resolution; judge motion as if it played at normal speed. Report ONLY these defects: CUT (a hard cut, or a sudden change of camera angle or framing), POPIN (hair, a hand, a prop or the product appears, vanishes, jumps or changes shape for 0.25 s or longer), MORPH (face or identity changes, extra or fused fingers), LABEL (the product label changes or becomes unreadable), ARTIFACT (a freeze, or a smear or warp over the face for 0.3 s or longer). An INTENDED TAKE may be given: anything it describes (holding up or putting down an object, phone tilts, gestures) is a staged action, never a defect. Ignore mild motion blur, blinks, hair swaying, compression noise and style. If unsure use sev minor. sev is blocking only if a viewer would obviously notice it at normal speed. conf is 0 to 1. Answer with JSON only: {\"issues\":[{\"type\":\"CUT|POPIN|MORPH|LABEL|ARTIFACT\",\"sev\":\"blocking|minor\",\"conf\":0.0,\"t0\":0.0,\"t1\":0.0,\"what\":\"one sentence\"}]}. If nothing, {\"issues\":[]}."
+   ],
+   "title": "Visual check \u00b7 Gemini 3.8 Flash"
+  },
+  {
+   "id": 1692160482721924,
+   "type": "ImageCrop",
+   "pos": [
+    50,
+    3368.0
+   ],
+   "size": [
+    300,
+    158.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 1598380996334804
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      4276192344564831,
+      2213335540490020,
+      287054875509949,
+      3561539087539088
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    320,
+    260,
+    0,
+    0
+   ],
+   "title": "Head crop: top 45% of each frame"
+  },
+  {
+   "id": 4109097371581408,
+   "type": "ImageFromBatch",
+   "pos": [
+    450,
+    3368.0
+   ],
+   "size": [
+    300,
+    110.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 4276192344564831
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      3588622838740423
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    0,
+    16
+   ]
+  },
+  {
+   "id": 3061025810695703,
+   "type": "ImageGrid",
+   "pos": [
+    850,
+    3368.0
+   ],
+   "size": [
+    300,
+    158.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 3588622838740423
+    }
+   ],
+   "outputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "links": [
+      1881699390786421
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    4,
+    320,
+    260,
+    4
+   ]
+  },
+  {
+   "id": 3716325565456309,
+   "type": "ImageFromBatch",
+   "pos": [
+    450,
+    3518.0
+   ],
+   "size": [
+    300,
+    110.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2213335540490020
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      3783866444815834
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    16,
+    16
+   ]
+  },
+  {
+   "id": 4439268165105394,
+   "type": "ImageGrid",
+   "pos": [
+    850,
+    3566.0
+   ],
+   "size": [
+    300,
+    158.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 3783866444815834
+    }
+   ],
+   "outputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "links": [
+      4004137586558385
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    4,
+    320,
+    260,
+    4
+   ]
+  },
+  {
+   "id": 452698325239026,
+   "type": "ImageFromBatch",
+   "pos": [
+    450,
+    3668.0
+   ],
+   "size": [
+    300,
+    110.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 287054875509949
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      2799102102050010
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    32,
+    16
+   ]
+  },
+  {
+   "id": 1393200481549084,
+   "type": "ImageGrid",
+   "pos": [
+    850,
+    3764.0
+   ],
+   "size": [
+    300,
+    158.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 2799102102050010
+    }
+   ],
+   "outputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "links": [
+      171048852050252
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    4,
+    320,
+    260,
+    4
+   ]
+  },
+  {
+   "id": 439447637939424,
+   "type": "ImageFromBatch",
+   "pos": [
+    450,
+    3818.0
+   ],
+   "size": [
+    300,
+    110.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 3561539087539088
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      1307451301113115
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    48,
+    16
+   ]
+  },
+  {
+   "id": 38841067846717,
+   "type": "ImageGrid",
+   "pos": [
+    850,
+    3962.0
+   ],
+   "size": [
+    300,
+    158.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 1307451301113115
+    }
+   ],
+   "outputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "links": [
+      3144160652804638
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    4,
+    320,
+    260,
+    4
+   ]
+  },
+  {
+   "id": 466039393239091,
+   "type": "GeminiNodeV3",
+   "pos": [
+    1250,
+    3368.0
+   ],
+   "size": [
+    300,
+    254.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.images.image_1",
+     "type": "IMAGE",
+     "link": 1881699390786421,
+     "grow_id": 1881699390786421
+    },
+    {
+     "name": "model.images.image_2",
+     "type": "IMAGE",
+     "link": 4004137586558385,
+     "grow_id": 4004137586558385
+    },
+    {
+     "name": "model.images.image_3",
+     "type": "IMAGE",
+     "link": 171048852050252,
+     "grow_id": 171048852050252
+    },
+    {
+     "name": "model.images.image_4",
+     "type": "IMAGE",
+     "link": 3144160652804638,
+     "grow_id": 3144160652804638
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      1855436445800884
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "Gemini 3.8 Flash",
+    "Classify the hair in every cell.",
+    "MEDIUM",
+    0.0,
+    0.95,
+    16384,
+    1,
+    "fixed",
+    "You check ONE thing in frames of a selfie video: the shape of the hair on top of the head. Each cell shows only the upper part of the frame (head and hair). You receive up to 4 images in order. Each image is a 4x4 grid of frames, read left to right, top to bottom, sampled every 0.25 s; the first cell of image 1 is t=0; the cell in image I (1-based), row R, column C is at t = ((I-1)*16 + (R-1)*4 + (C-1)) * 0.25 seconds. Blank cells after the end of the video are padding: skip them. For every cell give a level: 0 = hair short or swept, flat or with only a small tuft; 1 = a medium bump or bun shape; 2 = a tall ponytail or bun clearly standing up above the head, much taller than the usual hair. Use x when the head is not visible. Then list the runs of consecutive cells with level 2 (each run: t0 = time of its first cell, t1 = time of its last cell + 0.25). Answer with JSON only: {\"levels\":[\"16 characters for image 1\",\"...\"],\"tall_runs\":[{\"t0\":0.0,\"t1\":0.0}]}. If no cell is level 2, tall_runs is an empty list."
+   ],
+   "title": "Hair check \u00b7 Gemini 3.8 Flash"
+  },
+  {
+   "id": 1808851562751192,
+   "type": "PrimitiveStringMultiline",
+   "pos": [
+    50,
+    1350.0
+   ],
+   "size": [
+    300,
+    86.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      4254389120436801
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "jar: a plain white unlabeled pill jar stands on the counter in front of her, in the lower right of the frame"
+   ],
+   "title": "OBJECTS \u00b7 the props the take handles, one per line (spec.props)",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 1716382516664697,
+   "type": "StringFormat",
+   "pos": [
+    50,
+    2834.0
+   ],
+   "size": [
+    300,
+    86.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "values",
+     "type": "COMFY_AUTOGROW_V3",
+     "link": null
+    },
+    {
+     "name": "values.a",
+     "type": "*",
+     "link": 4254389120436801,
+     "grow_id": 4254389120436801
+    },
+    {
+     "name": "values.b",
+     "type": "*",
+     "link": 107470405249772,
+     "grow_id": 107470405249772
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      3730651019900192
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "OBJECTS:\n{a}\n\nINTENDED TAKE, by time:\n{b}"
+   ]
+  },
+  {
+   "id": 2792042699733654,
+   "type": "GeminiNodeV3",
+   "pos": [
+    450,
+    2834.0
+   ],
+   "size": [
+    300,
+    254.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model.prompt",
+     "type": "STRING",
+     "widget": {
+      "name": "model.prompt"
+     },
+     "link": 3730651019900192
+    },
+    {
+     "name": "model.video.video_1",
+     "type": "VIDEO",
+     "link": 634459550587734,
+     "grow_id": 634459550587734
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      3236763169521371
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "Gemini 3.8 Flash",
+    "",
+    "MEDIUM",
+    0.0,
+    0.95,
+    16384,
+    1,
+    "fixed",
+    "You check ONE thing in a selfie video made by an AI video model: how the listed OBJECTS behave. At every moment each object must either rest on a surface or be gripped by a hand, with fingers visibly wrapped around it. Report FLOAT (the object is in the air or moves while no hand grips it, or a hand only touches its side), APPEAR (it appears from nowhere), VANISH (it disappears), DUPLICATE (a second copy appears), SHAPE (its shape, size or contents jump or change), THROUGH (it passes through a hand, the face or another object). Look only at the listed objects. sev is blocking if a viewer would notice it at normal speed. conf is 0 to 1. Answer with JSON only: {\"issues\":[{\"type\":\"FLOAT|APPEAR|VANISH|DUPLICATE|SHAPE|THROUGH\",\"object\":\"name\",\"sev\":\"blocking|minor\",\"conf\":0.0,\"t0\":0.0,\"t1\":0.0,\"what\":\"one sentence\"}]}. If nothing, {\"issues\":[]}."
+   ],
+   "title": "Props check \u00b7 Gemini 3.8 Flash (float, pop-in, duplicate, passes through)"
+  },
+  {
+   "id": 3396685430066934,
+   "type": "StringFormat",
+   "pos": [
+    50,
+    4400.0
+   ],
+   "size": [
+    300,
+    86.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "values",
+     "type": "COMFY_AUTOGROW_V3",
+     "link": null
+    },
+    {
+     "name": "values.a",
+     "type": "*",
+     "link": 3539874835754630,
+     "grow_id": 3539874835754630
+    },
+    {
+     "name": "values.b",
+     "type": "*",
+     "link": 3253902511167204,
+     "grow_id": 3253902511167204
+    },
+    {
+     "name": "values.c",
+     "type": "*",
+     "link": 1855436445800884,
+     "grow_id": 1855436445800884
+    },
+    {
+     "name": "values.d",
+     "type": "*",
+     "link": 3236763169521371,
+     "grow_id": 3236763169521371
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [
+      424098056440884
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "TRANSCRIPT CHECK (audio vs script; t0/t1 in seconds):\n{a}\n\nVISUAL CHECK (t0/t1 in seconds):\n{b}\n\nHAIR CHECK (tall_runs, seconds):\n{c}\n\nPROPS CHECK (t0/t1 in seconds):\n{d}"
+   ]
+  },
+  {
+   "id": 2904549181272594,
+   "type": "SaveText",
+   "pos": [
+    450,
+    4400.0
+   ],
+   "size": [
+    300,
+    110.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "text",
+     "type": "STRING",
+     "link": 424098056440884
+    }
+   ],
+   "outputs": [
+    {
+     "name": "text",
+     "type": "STRING",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "text/review_findings",
+    "txt"
+   ],
+   "title": "SAVE \u00b7 findings (timestamped JSON from the four checks)"
+  },
+  {
+   "id": 4439268165105395,
+   "type": "MarkdownNote",
+   "pos": [
+    1750,
+    0
+   ],
+   "size": [
+    820,
+    900
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.35.0",
+    "Node name for S&R": "MarkdownNote"
+   },
+   "widgets_values": [
+    "## Review (Gemini QA)\n\nReview ONE take or ad the way `review.py` does, with Comfy nodes: **transcript check** (the audio is transcribed and diffed against the script), **visual check** (hard cuts, pop-ins, morphs, label changes) and **hair check** (head-only 4x4 frame grids at 4 fps, level 0/1/2 per cell; a tall run of level 2 is the ponytail/bun pop-in). Model **Gemini 3.8 Flash**, temperature 0. The prompts are the ones in `review.py`. Output: a findings text with timestamps in seconds. Plus the **props check** (review.py `PROPS_SYS`): each declared object must rest on a surface or be gripped; it flags floating, pop-ins, duplicates and objects passing through hands.\n\n**How to use**\n1. Group 0: set the clip on BOTH video loaders (Load Video nodes do not share a file), paste the take's quoted lines into **EXPECTED** (one per line) and its timeline into **INTENDED TAKE**. The preloaded ones are a sample take and its script. For an **action take** write `NONE. This is a silent action clip: every spoken, mumbled or whispered word is EXTRA, blocking.` and add a line `SCRIPTED NON-VERBAL SOUNDS (part of the script, never defects): <the yawn or gulp>`. Put the take's props in **OBJECTS**.\n2. Run. The three checks cost a few cents of Gemini (credits) per clip.\n3. Read the findings: every issue has t0/t1 in seconds, severity (blocking/minor) and, for audio, cut_in/cut_out and `removable`. Gemini is a candidate finder, not proof.\n4. If the only blocking issues are removable audio ones, cut them with **Fix - cut flagged ranges** (cut_in to cut_out); otherwise re-render the take with a new seed.\n\n**Score rule** (review.py): 0 when clean; else (real issues) + 0.5 per second affected. Real = audio blocking, visual blocking with conf >= 0.85, a hair level-2 run, or a frame shrink. Lower is better; a fix replaces the original only if its re-review score is strictly lower.\n\n**Not in this workflow (runs locally in the skill)**\n- The frame-shrink check (`media.py cropcheck`, ffmpeg cropdetect) and the score / `fix.ranges` arithmetic are computed by `review.py` locally.\n- 4 hair grids cover 16 s; `review.py` uses fewer grids for shorter clips (here the unused cells are blank padding).\n- Token and cost accounting: `review.py` prints them; in the UI the cost shows in the credits.\n\nSource: `scripts/ui_build.py` in the repo. Edit here in the UI, then run `scripts/ui_sync.py pull \"<name>\"` and the agent updates the skill to match."
+   ],
+   "title": "Read me"
+  }
+ ],
+ "links": [
+  [
+   4166384680976110,
+   2420897834577174,
+   0,
+   2358847463922918,
+   1,
+   "STRING"
+  ],
+  [
+   2053748674972229,
+   2358847463922918,
+   0,
+   3829954757271424,
+   0,
+   "STRING"
+  ],
+  [
+   848710882650904,
+   3179685970258337,
+   2,
+   3829954757271424,
+   1,
+   "AUDIO"
+  ],
+  [
+   4076311291965909,
+   2842767219488204,
+   0,
+   1675295184838449,
+   0,
+   "IMAGE"
+  ],
+  [
+   707681658412604,
+   1198364940713538,
+   0,
+   241407553132737,
+   1,
+   "STRING"
+  ],
+  [
+   993211388764395,
+   241407553132737,
+   0,
+   1351573744280544,
+   0,
+   "STRING"
+  ],
+  [
+   569376399451689,
+   1675295184838449,
+   0,
+   1351573744280544,
+   1,
+   "VIDEO"
+  ],
+  [
+   1598380996334804,
+   3179685970258337,
+   0,
+   1692160482721924,
+   0,
+   "IMAGE"
+  ],
+  [
+   4276192344564831,
+   1692160482721924,
+   0,
+   4109097371581408,
+   0,
+   "IMAGE"
+  ],
+  [
+   3588622838740423,
+   4109097371581408,
+   0,
+   3061025810695703,
+   0,
+   "IMAGE"
+  ],
+  [
+   2213335540490020,
+   1692160482721924,
+   0,
+   3716325565456309,
+   0,
+   "IMAGE"
+  ],
+  [
+   3783866444815834,
+   3716325565456309,
+   0,
+   4439268165105394,
+   0,
+   "IMAGE"
+  ],
+  [
+   287054875509949,
+   1692160482721924,
+   0,
+   452698325239026,
+   0,
+   "IMAGE"
+  ],
+  [
+   2799102102050010,
+   452698325239026,
+   0,
+   1393200481549084,
+   0,
+   "IMAGE"
+  ],
+  [
+   3561539087539088,
+   1692160482721924,
+   0,
+   439447637939424,
+   0,
+   "IMAGE"
+  ],
+  [
+   1307451301113115,
+   439447637939424,
+   0,
+   38841067846717,
+   0,
+   "IMAGE"
+  ],
+  [
+   1881699390786421,
+   3061025810695703,
+   0,
+   466039393239091,
+   0,
+   "IMAGE"
+  ],
+  [
+   4004137586558385,
+   4439268165105394,
+   0,
+   466039393239091,
+   1,
+   "IMAGE"
+  ],
+  [
+   171048852050252,
+   1393200481549084,
+   0,
+   466039393239091,
+   2,
+   "IMAGE"
+  ],
+  [
+   3144160652804638,
+   38841067846717,
+   0,
+   466039393239091,
+   3,
+   "IMAGE"
+  ],
+  [
+   4254389120436801,
+   1808851562751192,
+   0,
+   1716382516664697,
+   1,
+   "STRING"
+  ],
+  [
+   107470405249772,
+   1198364940713538,
+   0,
+   1716382516664697,
+   2,
+   "STRING"
+  ],
+  [
+   3730651019900192,
+   1716382516664697,
+   0,
+   2792042699733654,
+   0,
+   "STRING"
+  ],
+  [
+   634459550587734,
+   1675295184838449,
+   0,
+   2792042699733654,
+   1,
+   "VIDEO"
+  ],
+  [
+   3539874835754630,
+   3829954757271424,
+   0,
+   3396685430066934,
+   1,
+   "STRING"
+  ],
+  [
+   3253902511167204,
+   1351573744280544,
+   0,
+   3396685430066934,
+   2,
+   "STRING"
+  ],
+  [
+   1855436445800884,
+   466039393239091,
+   0,
+   3396685430066934,
+   3,
+   "STRING"
+  ],
+  [
+   3236763169521371,
+   2792042699733654,
+   0,
+   3396685430066934,
+   4,
+   "STRING"
+  ],
+  [
+   424098056440884,
+   3396685430066934,
+   0,
+   2904549181272594,
+   0,
+   "STRING"
+  ]
+ ],
+ "groups": [
+  {
+   "title": "0 \u00b7 Inputs you edit",
+   "bounding": [
+    0,
+    0,
+    660,
+    1526.0
+   ],
+   "color": "#3f789e",
+   "font_size": 40,
+   "flags": {}
+  },
+  {
+   "title": "1 \u00b7 Transcript check (audio vs the script)",
+   "bounding": [
+    0,
+    1626.0,
+    800,
+    434.0
+   ],
+   "color": "#8A8",
+   "font_size": 40,
+   "flags": {}
+  },
+  {
+   "title": "2 \u00b7 Visual check (video)",
+   "bounding": [
+    0,
+    2160.0,
+    800,
+    484.0
+   ],
+   "color": "#A88",
+   "font_size": 40,
+   "flags": {}
+  },
+  {
+   "title": "2b \u00b7 Props check (each object rests on a surface or is gripped)",
+   "bounding": [
+    0,
+    2744.0,
+    800,
+    434.0
+   ],
+   "color": "#88A",
+   "font_size": 40,
+   "flags": {}
+  },
+  {
+   "title": "3 \u00b7 Hair check (head-only frame grids)",
+   "bounding": [
+    0,
+    3278.0,
+    1600,
+    932.0
+   ],
+   "color": "#A8A",
+   "font_size": 40,
+   "flags": {}
+  },
+  {
+   "title": "4 \u00b7 Findings report",
+   "bounding": [
+    0,
+    4310.0,
+    800,
+    290.0
+   ],
+   "color": "#8AA",
+   "font_size": 40,
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.25,
+   "offset": [
+    40,
+    40
+   ]
+  },
+  "info": {
+   "name": "Comfy UGC - 5 Review (Gemini QA)",
+   "description": "Gemini QA of one take: transcript diff, visual candidates, props check, hair check, timestamped findings"
+  }
+ },
+ "version": 0.4
+}

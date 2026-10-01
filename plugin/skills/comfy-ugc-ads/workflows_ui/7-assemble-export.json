@@ -1,0 +1,778 @@
+{
+ "id": "00000000-0000-0000-0000-000000000001",
+ "revision": 0,
+ "last_node_id": 4375498117946435,
+ "last_link_id": 0,
+ "nodes": [
+  {
+   "id": 2044702695789409,
+   "type": "LoadVideo",
+   "pos": [
+    50,
+    90
+   ],
+   "size": [
+    300,
+    110.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "VIDEO",
+     "type": "VIDEO",
+     "links": [
+      4261291665031812
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "9dbcb79ce35590fa8164024e402aaf72b43b378d1593c3ec486d096e6f41166c.mp4"
+   ],
+   "title": "SET FILE: take 1 (video)",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 1740936324698155,
+   "type": "VHS_LoadVideoFFmpeg",
+   "pos": [
+    50,
+    240.0
+   ],
+   "size": [
+    300,
+    290.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "meta_batch",
+     "type": "VHS_BatchManager",
+     "link": null
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": []
+    },
+    {
+     "name": "mask",
+     "type": "MASK",
+     "links": []
+    },
+    {
+     "name": "audio",
+     "type": "AUDIO",
+     "links": [
+      122371134517480
+     ]
+    },
+    {
+     "name": "video_info",
+     "type": "VHS_VIDEOINFO",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "9dbcb79ce35590fa8164024e402aaf72b43b378d1593c3ec486d096e6f41166c.mp4",
+    1,
+    64,
+    112,
+    0,
+    0,
+    "AnimateDiff"
+   ],
+   "title": "SET FILE: take 1 again (its audio)",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 2651420033899744,
+   "type": "LoadVideo",
+   "pos": [
+    50,
+    570.0
+   ],
+   "size": [
+    300,
+    110.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "VIDEO",
+     "type": "VIDEO",
+     "links": [
+      4150959903472786
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "9dbcb79ce35590fa8164024e402aaf72b43b378d1593c3ec486d096e6f41166c.mp4"
+   ],
+   "title": "SET FILE: take 2 (video)",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 3023597902274185,
+   "type": "VHS_LoadVideoFFmpeg",
+   "pos": [
+    50,
+    720.0
+   ],
+   "size": [
+    300,
+    290.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "meta_batch",
+     "type": "VHS_BatchManager",
+     "link": null
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": []
+    },
+    {
+     "name": "mask",
+     "type": "MASK",
+     "links": []
+    },
+    {
+     "name": "audio",
+     "type": "AUDIO",
+     "links": [
+      3608094927867822
+     ]
+    },
+    {
+     "name": "video_info",
+     "type": "VHS_VIDEOINFO",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "9dbcb79ce35590fa8164024e402aaf72b43b378d1593c3ec486d096e6f41166c.mp4",
+    1,
+    64,
+    112,
+    0,
+    0,
+    "AnimateDiff"
+   ],
+   "title": "SET FILE: take 2 again (its audio)",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 3686790887868029,
+   "type": "LoadVideo",
+   "pos": [
+    50,
+    1050.0
+   ],
+   "size": [
+    300,
+    110.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "VIDEO",
+     "type": "VIDEO",
+     "links": [
+      896194759850910
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "9dbcb79ce35590fa8164024e402aaf72b43b378d1593c3ec486d096e6f41166c.mp4"
+   ],
+   "title": "SET FILE: take 3 (video)",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 2024884629285418,
+   "type": "VHS_LoadVideoFFmpeg",
+   "pos": [
+    50,
+    1200.0
+   ],
+   "size": [
+    300,
+    290.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "meta_batch",
+     "type": "VHS_BatchManager",
+     "link": null
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": []
+    },
+    {
+     "name": "mask",
+     "type": "MASK",
+     "links": []
+    },
+    {
+     "name": "audio",
+     "type": "AUDIO",
+     "links": [
+      701079192838695
+     ]
+    },
+    {
+     "name": "video_info",
+     "type": "VHS_VIDEOINFO",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "9dbcb79ce35590fa8164024e402aaf72b43b378d1593c3ec486d096e6f41166c.mp4",
+    1,
+    64,
+    112,
+    0,
+    0,
+    "AnimateDiff"
+   ],
+   "title": "SET FILE: take 3 again (its audio)",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 1230515362211734,
+   "type": "AudioConcat",
+   "pos": [
+    50,
+    1770.0
+   ],
+   "size": [
+    300,
+    106.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "audio1",
+     "type": "AUDIO",
+     "link": 122371134517480
+    },
+    {
+     "name": "audio2",
+     "type": "AUDIO",
+     "link": 3608094927867822
+    }
+   ],
+   "outputs": [
+    {
+     "name": "AUDIO",
+     "type": "AUDIO",
+     "links": [
+      4081187725420622
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "after"
+   ]
+  },
+  {
+   "id": 511570216139726,
+   "type": "AudioConcat",
+   "pos": [
+    450,
+    1770.0
+   ],
+   "size": [
+    300,
+    106.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "audio1",
+     "type": "AUDIO",
+     "link": 4081187725420622
+    },
+    {
+     "name": "audio2",
+     "type": "AUDIO",
+     "link": 701079192838695
+    }
+   ],
+   "outputs": [
+    {
+     "name": "AUDIO",
+     "type": "AUDIO",
+     "links": [
+      120648604862375
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "after"
+   ]
+  },
+  {
+   "id": 1994334632438107,
+   "type": "NormalizeAudioLoudness",
+   "pos": [
+    850,
+    1770.0
+   ],
+   "size": [
+    300,
+    86.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "audio",
+     "type": "AUDIO",
+     "link": 120648604862375
+    }
+   ],
+   "outputs": [
+    {
+     "name": "audio",
+     "type": "AUDIO",
+     "links": [
+      536412336366689
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    -14.0
+   ],
+   "title": "Loudness -14 LUFS (media.py concat uses ffmpeg loudnorm I=-14)"
+  },
+  {
+   "id": 3557512432501497,
+   "type": "ConcatenateVideo",
+   "pos": [
+    50,
+    2156.0
+   ],
+   "size": [
+    300,
+    106.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "videos",
+     "type": "COMFY_AUTOGROW_V3",
+     "link": null
+    },
+    {
+     "name": "complete_audio",
+     "type": "AUDIO",
+     "link": 536412336366689
+    },
+    {
+     "name": "videos.video0",
+     "type": "VIDEO",
+     "link": 4261291665031812,
+     "grow_id": 4261291665031812
+    },
+    {
+     "name": "videos.video1",
+     "type": "VIDEO",
+     "link": 4150959903472786,
+     "grow_id": 4150959903472786
+    },
+    {
+     "name": "videos.video2",
+     "type": "VIDEO",
+     "link": 896194759850910,
+     "grow_id": 896194759850910
+    }
+   ],
+   "outputs": [
+    {
+     "name": "VIDEO",
+     "type": "VIDEO",
+     "links": [
+      2659736415967137,
+      713994894232701
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "h264"
+   ],
+   "title": "Join the takes in order, with the normalized audio"
+  },
+  {
+   "id": 4375498117946434,
+   "type": "SaveVideo",
+   "pos": [
+    450,
+    2156.0
+   ],
+   "size": [
+    300,
+    158.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "video",
+     "type": "VIDEO",
+     "link": 2659736415967137
+    }
+   ],
+   "outputs": [
+    {
+     "name": "video",
+     "type": "VIDEO",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "video/ad_9x16",
+    "mp4",
+    "h264",
+    "re-encode",
+    16.0,
+    ""
+   ],
+   "title": "SAVE \u00b7 9:16 (768x1376, native size)"
+  },
+  {
+   "id": 1389491774922739,
+   "type": "VideoCrop",
+   "pos": [
+    50,
+    2594.0
+   ],
+   "size": [
+    300,
+    82.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 2,
+   "inputs": [
+    {
+     "name": "video",
+     "type": "VIDEO",
+     "link": 713994894232701
+    },
+    {
+     "name": "crop",
+     "type": "VIDEO_EDIT",
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "name": "VIDEO",
+     "type": "VIDEO",
+     "links": [
+      1545193325184405
+     ]
+    }
+   ],
+   "properties": {},
+   "widgets_values": [],
+   "title": "Crop Video 4:5 \u00b7 MUTED: un-mute (Ctrl+M) and drag the crop box"
+  },
+  {
+   "id": 2080022175836152,
+   "type": "SaveVideo",
+   "pos": [
+    450,
+    2594.0
+   ],
+   "size": [
+    300,
+    158.0
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 2,
+   "inputs": [
+    {
+     "name": "video",
+     "type": "VIDEO",
+     "link": 1545193325184405
+    }
+   ],
+   "outputs": [
+    {
+     "name": "video",
+     "type": "VIDEO",
+     "links": []
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "video/ad_4x5",
+    "mp4",
+    "h264",
+    "re-encode",
+    16.0,
+    ""
+   ],
+   "title": "SAVE \u00b7 4:5"
+  },
+  {
+   "id": 4375498117946435,
+   "type": "MarkdownNote",
+   "pos": [
+    1350,
+    0
+   ],
+   "size": [
+    820,
+    900
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.35.0",
+    "Node name for S&R": "MarkdownNote"
+   },
+   "widgets_values": [
+    "## Assemble + export\n\nJoin **3 takes** in order into one ad, normalize the loudness of the whole ad, and export **9:16** and **4:5**, like `media.py concat` and `media.py export`. Default: 3 takes x 15 s = 45 s (take count is configurable: add a Load Video + audio loader pair per extra take, e.g. 4 takes = 60 s).\n\n**How to use**\n1. Group 0: set each take's file on BOTH loaders of that take (the video loader and its audio loader do not share a file). Order = take order (the preloaded files are a sample chain).\n2. Run. Output 1 is the ad at the takes' native size; output 2 is the 4:5 crop (group 3).\n3. 4:5 is a crop of the 9:16 frame: full width, 70% of the height (768x960 from 768x1376; 576x720 from 576x1024). The **Crop Video** node is a frontend widget: un-mute it (Ctrl+M) and drag its box to the full width, about 960 px high, starting about 146 px from the top so the face stays in frame; its values cannot be preloaded by a script.\n4. Then do captions, the packshot cutaway(s) and the end card locally (see below), re-review the finished ad, and export again at 1080 wide.\n\n**Size**: sample takes are 768x1376 (HQ). Comfy has no video scale node, so this workflow exports at the native size; the 1080x1920 / 1080x1350 versions come from `media.py export`.\n\n**Not in this workflow (runs locally in the skill)**\n- **Captions, the packshot cutaway (muted real label) and the end card** (disclosure text as a PNG) run in local ffmpeg (`media.py overlay`); Comfy has no equivalent that works on the whole ad without decoding every frame.\n- **Scale to 1080x1920 / 1080x1350** (`media.py export`, lanczos): no video-scale node on Cloud.\n- **Loudness**: ffmpeg `loudnorm` (I, TP -1.5, LRA 11) is replaced by Comfy's NormalizeAudioLoudness (integrated loudness only).\n- **4:5 crop values**: set by hand on the Crop Video node (see step 3).\n\nSource: `scripts/ui_build.py` in the repo. Edit here in the UI, then run `scripts/ui_sync.py pull \"<name>\"` and the agent updates the skill to match."
+   ],
+   "title": "Read me"
+  }
+ ],
+ "links": [
+  [
+   122371134517480,
+   1740936324698155,
+   2,
+   1230515362211734,
+   0,
+   "AUDIO"
+  ],
+  [
+   3608094927867822,
+   3023597902274185,
+   2,
+   1230515362211734,
+   1,
+   "AUDIO"
+  ],
+  [
+   4081187725420622,
+   1230515362211734,
+   0,
+   511570216139726,
+   0,
+   "AUDIO"
+  ],
+  [
+   701079192838695,
+   2024884629285418,
+   2,
+   511570216139726,
+   1,
+   "AUDIO"
+  ],
+  [
+   120648604862375,
+   511570216139726,
+   0,
+   1994334632438107,
+   0,
+   "AUDIO"
+  ],
+  [
+   4261291665031812,
+   2044702695789409,
+   0,
+   3557512432501497,
+   2,
+   "VIDEO"
+  ],
+  [
+   4150959903472786,
+   2651420033899744,
+   0,
+   3557512432501497,
+   3,
+   "VIDEO"
+  ],
+  [
+   896194759850910,
+   3686790887868029,
+   0,
+   3557512432501497,
+   4,
+   "VIDEO"
+  ],
+  [
+   536412336366689,
+   1994334632438107,
+   0,
+   3557512432501497,
+   1,
+   "AUDIO"
+  ],
+  [
+   2659736415967137,
+   3557512432501497,
+   0,
+   4375498117946434,
+   0,
+   "VIDEO"
+  ],
+  [
+   713994894232701,
+   3557512432501497,
+   0,
+   1389491774922739,
+   0,
+   "VIDEO"
+  ],
+  [
+   1545193325184405,
+   1389491774922739,
+   0,
+   2080022175836152,
+   0,
+   "VIDEO"
+  ]
+ ],
+ "groups": [
+  {
+   "title": "0 \u00b7 Takes you edit",
+   "bounding": [
+    0,
+    0,
+    500,
+    1580.0
+   ],
+   "color": "#3f789e",
+   "font_size": 40,
+   "flags": {}
+  },
+  {
+   "title": "1 \u00b7 Loudness (one track for the whole ad)",
+   "bounding": [
+    0,
+    1680.0,
+    1200,
+    286.0
+   ],
+   "color": "#8A8",
+   "font_size": 40,
+   "flags": {}
+  },
+  {
+   "title": "2 \u00b7 Join + export 9:16",
+   "bounding": [
+    0,
+    2066.0,
+    800,
+    338.0
+   ],
+   "color": "#A88",
+   "font_size": 40,
+   "flags": {}
+  },
+  {
+   "title": "3 \u00b7 Export 4:5 (crop)",
+   "bounding": [
+    0,
+    2504.0,
+    800,
+    338.0
+   ],
+   "color": "#88A",
+   "font_size": 40,
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.25,
+   "offset": [
+    40,
+    40
+   ]
+  },
+  "info": {
+   "name": "Comfy UGC - 7 Assemble + export",
+   "description": "Join 3 takes, normalize loudness, export 9:16 and 4:5"
+  }
+ },
+ "version": 0.4
+}

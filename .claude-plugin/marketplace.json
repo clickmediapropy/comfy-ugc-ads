@@ -1,0 +1,15 @@
+{
+  "name": "comfy-ugc-ads",
+  "description": "Realistic UGC video ads on Comfy Cloud, from a brand brief and a product packshot",
+  "owner": {
+    "name": "Nico Delgado",
+    "url": "https://nicodelgado.dev"
+  },
+  "plugins": [
+    {
+      "name": "comfy-ugc-ads",
+      "source": "./plugin",
+      "description": "Realistic UGC-style video ads from a brief and a packshot, rendered on Comfy Cloud."
+    }
+  ]
+}
