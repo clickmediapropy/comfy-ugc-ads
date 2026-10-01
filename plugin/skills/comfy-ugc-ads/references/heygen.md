@@ -5,7 +5,7 @@ HeyGen Video 1, run through the Comfy Cloud partner node, is the default model (
 What it doesn't have, and what the skill does about it:
 - **No last frame:** each take starts exactly from its still and ends free. Keep `end_state` simple (the hand at rest, eyes on the lens); the cut to the next part is a jump cut.
 - **No voice reference on the image-to-video node** (`HeyGenImageToVideoNode`). The reference-to-video node (`HeyGenReferenceToVideoNode`) does take `@Audio1` voice references (Nico, 2026-10-01; its node description lists up to 12 image, video and audio references), which is the route for holding a voice across clips; not yet wired into the skill or tested for voice match. With the image-to-video node: every take of a creator uses the same `voice` text and the same seed (the spec seed). Listen to a creator's takes one after another; if the voice changes, re-render the later speech takes with H3 using take 1's audio as the voice reference (SKILL.md step 6, the H3 fallback).
-- **No product reference:** the product must already be in the take's still (a gpt-image edit with the packshot, references/stills.md).
+- **No product reference on the image-to-video node.** The product must already be in the take's still (a gpt-image edit with the packshot, references/stills.md). The reference-to-video node accepts several reference images (up to 12 references in all), so the packshot can go in as a second image, `@Image2`, named in the prompt as the product (Nico, 2026-10-01). Not yet wired into the skill or tested for label fidelity.
 - **Not a `partner_generate` model:** on the web it runs as the saved workflow `8-heygen-take` (references/web-mode.md).
 
 ## Settings
